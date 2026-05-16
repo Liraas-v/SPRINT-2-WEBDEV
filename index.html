@@ -7,6 +7,91 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- ================================================
+       TELA DE LOGIN
+  ================================================ -->
+    <div id="telaLogin">
+      <div class="login-caixa">
+        <p class="login-logo">◈ JOVI LensAI</p>
+        <h1>Bem-vindo</h1>
+        <p class="login-subtitulo">Faça login para continuar</p>
+
+        <form id="formLogin">
+          <div class="campo">
+            <label for="loginEmail">E-mail</label>
+            <input type="text" id="loginEmail" placeholder="seu@email.com" />
+            <span id="erroLoginEmail" class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="loginSenha">Senha</label>
+            <input
+              type="password"
+              id="loginSenha"
+              placeholder="Mínimo 6 caracteres"
+            />
+            <span id="erroLoginSenha" class="erro"></span>
+          </div>
+
+          <button type="submit" class="btn-primario btn-full">Entrar</button>
+        </form>
+
+        <p class="login-rodape">
+          Não tem conta?
+          <button id="btnIrCadastro" class="btn-link">Cadastre-se</button>
+        </p>
+
+        <p class="login-dica">
+          Demonstração: <strong>ana@fiap.com</strong> / <strong>123456</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================
+       TELA DE CADASTRO
+  ================================================ -->
+    <div id="telaCadastro" class="oculto">
+      <div class="login-caixa">
+        <p class="login-logo">◈ JOVI LensAI</p>
+        <h1>Criar Conta</h1>
+        <p class="login-subtitulo">Preencha seus dados para começar</p>
+
+        <form id="formCadastro">
+          <div class="campo">
+            <label for="cadNome">Nome completo</label>
+            <input type="text" id="cadNome" placeholder="Ex: Ana Silva" />
+            <span id="erroCadNome" class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="cadEmail">E-mail</label>
+            <input type="text" id="cadEmail" placeholder="seu@email.com" />
+            <span id="erroCadEmail" class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="cadSenha">Senha</label>
+            <input
+              type="password"
+              id="cadSenha"
+              placeholder="Mínimo 6 caracteres"
+            />
+            <span id="erroCadSenha" class="erro"></span>
+            <span id="dicaSenha" class="dica">Mínimo 6 caracteres</span>
+          </div>
+
+          <button type="submit" class="btn-primario btn-full">
+            Criar Conta
+          </button>
+        </form>
+
+        <p class="login-rodape">
+          Já tem conta?
+          <button id="btnIrLogin" class="btn-link">Faça login</button>
+        </p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
