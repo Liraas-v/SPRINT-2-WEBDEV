@@ -210,3 +210,73 @@ document.getElementById('btnSair').addEventListener('click', function() {
 if (usuarioLogado !== null) {
     entrarNoSite(false);
 }
+
+
+// ==========================================================
+// 3. NAVBAR — SCROLL + MENU MOBILE
+// ==========================================================
+
+const navbar    = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) {
+        navbar.classList.add('fixo');
+    } else {
+        navbar.classList.remove('fixo');
+    }
+});
+
+hamburger.addEventListener('click', function() {
+    const estaAberto = navLinks.classList.contains('aberto');
+
+    if (estaAberto) {
+        navLinks.classList.remove('aberto');
+        hamburger.classList.remove('aberto');
+        hamburger.setAttribute('aria-expanded', 'false');
+    } else {
+        navLinks.classList.add('aberto');
+        hamburger.classList.add('aberto');
+        hamburger.setAttribute('aria-expanded', 'true');
+    }
+});
+
+const todosOsLinks = document.querySelectorAll('#navLinks a');
+
+todosOsLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        navLinks.classList.remove('aberto');
+        hamburger.classList.remove('aberto');
+        hamburger.setAttribute('aria-expanded', 'false');
+    });
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        navLinks.classList.remove('aberto');
+        hamburger.classList.remove('aberto');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+});
+
+
+// ==========================================================
+// 4. TEMA DARK / LIGHT
+// ==========================================================
+
+const btnTema = document.getElementById('btnTema');
+const htmlEl  = document.documentElement;
+
+const temaSalvo = localStorage.getItem('jovi-tema') || 'dark';
+htmlEl.setAttribute('data-theme', temaSalvo);
+btnTema.textContent = temaSalvo === 'dark' ? '☀' : '🌙';
+
+btnTema.addEventListener('click', function() {
+    const temaAtual = htmlEl.getAttribute('data-theme');
+    const novoTema  = temaAtual === 'dark' ? 'light' : 'dark';
+
+    htmlEl.setAttribute('data-theme', novoTema);
+    localStorage.setItem('jovi-tema', novoTema);
+    btnTema.textContent = novoTema === 'dark' ? '☀' : '🌙';
+});
