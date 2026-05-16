@@ -481,3 +481,39 @@ section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bot
   color: rgba(255, 255, 255, 0.5);
   z-index: 10;
 }
+
+/* ----------------------------------------------------------
+   FUNCIONALIDADES
+---------------------------------------------------------- */
+#funcionalidades { background: var(--bg); }
+#funcionalidades h2 { margin-bottom: 2.5rem; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  background: rgba(155, 77, 255, 0.05);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.card:hover { border-color: rgba(155, 77, 255, 0.5); transform: translateY(-4px); }
+
+.card-icone {
+  font-size: 1.8rem;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.card p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
