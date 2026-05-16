@@ -278,3 +278,30 @@ document.getElementById('btnProximo').addEventListener('click',  function() { ir
 setInterval(function() { irParaSlide(slideAtual + 1); }, 4500);
 
 numeracao.textContent = '1 / ' + slides.length;
+
+
+// ==========================================================
+// 6. IA EM AÇÃO — CENÁRIO LOUSA
+// ==========================================================
+
+const cenarioLousa = {
+    titulo:    'Modo Lousa',
+    descricao: 'A IA identifica a lousa, corrige perspectiva e aumenta o contraste automaticamente.',
+    antes:     'Foto borrada da lousa',
+    depois:    'Lousa nítida e corrigida',
+    recursos:  ['✓ Correção de perspectiva', '✓ Eliminação de reflexo', '✓ Contraste de texto', '✓ Auto-corte de bordas']
+};
+
+document.getElementById('iaTitulo').textContent      = cenarioLousa.titulo;
+document.getElementById('iaDescricao').textContent   = cenarioLousa.descricao;
+document.getElementById('legendaAntes').textContent  = cenarioLousa.antes;
+document.getElementById('legendaDepois').textContent = cenarioLousa.depois;
+
+const listaRecursos = document.getElementById('iaRecursos');
+listaRecursos.innerHTML = '';
+
+for (let i = 0; i < cenarioLousa.recursos.length; i++) {
+    const item = document.createElement('li');
+    item.textContent = cenarioLousa.recursos[i];
+    listaRecursos.appendChild(item);
+}

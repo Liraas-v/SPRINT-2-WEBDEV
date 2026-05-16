@@ -517,3 +517,91 @@ section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bot
 
 .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
 .card p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+/* ----------------------------------------------------------
+   IA EM AÇÃO
+---------------------------------------------------------- */
+#ia-acao { background: var(--bg2); }
+#ia-acao h2 { margin-bottom: 0.5rem; }
+#ia-acao > .container > p { color: var(--muted); margin-bottom: 1.5rem; }
+
+.ia-botoes { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+.ia-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  border-radius: 100px;
+  border: 1px solid var(--borda);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ia-btn:hover { border-color: rgba(155,77,255,0.5); color: var(--texto); }
+.ia-btn.ativo { background: var(--gradiente); border-color: transparent; color: #fff; }
+
+.ia-painel {
+  background: rgba(155, 77, 255, 0.05);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ia-comparacao { display: flex; align-items: center; gap: 1rem; }
+
+.ia-foto {
+  flex: 1;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--borda);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.foto-label { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+.ia-foto.antes  { background: #0e0820; color: var(--muted); }
+
+.ia-foto.depois {
+  background: linear-gradient(145deg, #0d1a25, #041218);
+  color: var(--ciano);
+  border-color: rgba(0, 240, 212, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 212, 0.1);
+}
+
+.ia-foto img {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0.4rem 0;
+  min-height: 0;
+}
+
+.ia-vs { font-weight: 800; font-size: 0.8rem; color: var(--muted); flex-shrink: 0; }
+
+.ia-info h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.ia-info p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.65; }
+
+#iaRecursos li { font-size: 0.85rem; color: var(--ciano); padding: 0.3rem 0; border-bottom: 1px solid rgba(0, 240, 212, 0.1); }
+#iaRecursos li:last-child { border-bottom: none; }
