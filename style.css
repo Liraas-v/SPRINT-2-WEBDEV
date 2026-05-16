@@ -605,3 +605,96 @@ section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bot
 
 #iaRecursos li { font-size: 0.85rem; color: var(--ciano); padding: 0.3rem 0; border-bottom: 1px solid rgba(0, 240, 212, 0.1); }
 #iaRecursos li:last-child { border-bottom: none; }
+
+/* ----------------------------------------------------------
+   CONTATO
+---------------------------------------------------------- */
+#contato { background: var(--bg); }
+
+.contato-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+.contato-info h2 { margin-bottom: 1rem; }
+.contato-info > p { color: var(--muted); margin-bottom: 1.5rem; }
+.beneficios li { font-size: 0.9rem; color: var(--ciano); margin-bottom: 0.4rem; }
+
+#formContato {
+  background: rgba(155, 77, 255, 0.05);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.feedback-msg { padding: 0.9rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-align: center; margin-top: 0.75rem; }
+
+.feedback-msg.sucesso { background: rgba(0, 240, 212, 0.1); border: 1px solid rgba(0, 240, 212, 0.35); color: var(--ciano); }
+.feedback-msg.falha   { background: rgba(255, 77, 184, 0.1); border: 1px solid rgba(255, 77, 184, 0.35); color: var(--rosa); }
+
+/* ----------------------------------------------------------
+   FOOTER
+---------------------------------------------------------- */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--borda);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.footer-inner .logo { font-size: 1.15rem; }
+.footer-inner > p { color: var(--muted); font-size: 0.85rem; }
+
+footer nav { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+footer nav a { font-size: 0.85rem; color: var(--muted); transition: color 0.2s; }
+footer nav a:hover { color: var(--roxo); }
+
+/* ----------------------------------------------------------
+   RESPONSIVIDADE — Tablet (≤ 900px)
+---------------------------------------------------------- */
+@media (max-width: 900px) {
+  #hero { flex-direction: column; text-align: center; min-height: auto; padding-top: calc(var(--nav-h) + 3rem); }
+
+  .hero-conteudo { order: 2; }
+  .hero-visual   { order: 1; }
+
+  .hero-conteudo > p { margin-left: auto; margin-right: auto; }
+  .hero-botoes   { justify-content: center; }
+  .hero-stats    { justify-content: center; }
+
+  .cards-grid      { grid-template-columns: repeat(2, 1fr); }
+  .contato-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+  .ia-painel       { grid-template-columns: 1fr; }
+  .ia-comparacao   { justify-content: center; }
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVIDADE — Mobile (≤ 640px)
+---------------------------------------------------------- */
+@media (max-width: 640px) {
+  #hamburger { display: flex; }
+
+  #navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background: var(--bg2);
+    border-left: 1px solid var(--borda);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    z-index: 99;
+    transition: right 0.3s;
+  }
+
+  #navLinks.aberto { right: 0; box-shadow: -20px 0 60px rgba(0,0,0,0.4); }
+  #navLinks a { font-size: 1.1rem; padding: 0.65rem 0.85rem; width: 100%; display: block; }
+  #saudacao { display: none; }
+
+  .cards-grid { grid-template-columns: 1fr; }
+  .slide { height: 300px; }
+  .camera { width: 220px; }
+  .lente  { width: 110px; height: 110px; }
+}

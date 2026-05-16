@@ -305,3 +305,58 @@ for (let i = 0; i < cenarioLousa.recursos.length; i++) {
     item.textContent = cenarioLousa.recursos[i];
     listaRecursos.appendChild(item);
 }
+
+
+// ==========================================================
+// 7. FORMULÁRIO DE CONTATO
+// ==========================================================
+
+const formContato = document.getElementById('formContato');
+
+formContato.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+
+    const nome     = document.getElementById('contatoNome').value.trim();
+    const email    = document.getElementById('contatoEmail').value.trim();
+    const mensagem = document.getElementById('contatoMensagem').value.trim();
+    const feedback = document.getElementById('feedbackContato');
+
+    document.getElementById('erroContatoNome').textContent     = '';
+    document.getElementById('erroContatoEmail').textContent    = '';
+    document.getElementById('erroContatoMensagem').textContent = '';
+
+    let valido = true;
+
+    if (nome.length < 3) { document.getElementById('erroContatoNome').textContent = 'Nome deve ter ao menos 3 caracteres.'; valido = false; }
+    if (!email.includes('@') || !email.includes('.')) { document.getElementById('erroContatoEmail').textContent = 'Insira um e-mail válido.'; valido = false; }
+    if (mensagem.length < 10) { document.getElementById('erroContatoMensagem').textContent = 'Mensagem muito curta (mínimo 10 caracteres).'; valido = false; }
+
+    if (!valido) { alert('⚠️ Preencha todos os campos corretamente antes de enviar.'); return; }
+
+    const primeiroNome = nome.split(' ')[0];
+
+    feedback.textContent = '✅ Mensagem enviada, ' + primeiroNome + '! Responderemos em breve.';
+    feedback.className = 'feedback-msg sucesso';
+    feedback.classList.remove('oculto');
+
+    alert('Sua mensagem foi enviada com sucesso, ' + primeiroNome + '! 📨');
+
+    formContato.reset();
+});
+
+
+// ==========================================================
+// 8. BOTÃO HERO — PROMPT + SCROLL
+// ==========================================================
+
+document.getElementById('btnExperimentar').addEventListener('click', function() {
+    const dificuldade = prompt('Qual é sua maior dificuldade ao fotografar conteúdo em aula?\n(Ex: foco, iluminação, velocidade...)');
+
+    if (dificuldade !== null && dificuldade.trim().length > 0) {
+        alert('Entendido! "' + dificuldade.trim() + '" é exatamente o problema que a JOVI LensAI resolve. 🎯\nVeja como se cadastrar abaixo!');
+    }
+
+    const secaoContato = document.getElementById('contato');
+    const topo = secaoContato.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top: topo, behavior: 'smooth' });
+});
