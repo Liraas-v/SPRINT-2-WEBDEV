@@ -1,7 +1,5 @@
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=wave&color=ED1C24&height=130&section=header&text=SPRINT+2+WEBDEV&fontSize=36&fontColor=ffffff)
-
 ![FIAP](https://img.shields.io/badge/FIAP-2026-ED1C24?style=flat)
 ![Sprint](https://img.shields.io/badge/Sprint-2-ED1C24?style=flat)
 ![HTML](https://img.shields.io/badge/HTML%2FCSS%2FJS-Web-555?style=flat)
@@ -82,9 +80,3 @@ cd SPRINT-2-WEBDEV
 | Cristian Schmidt | 570183 |
 
 ---
-
-<div align="center">
-
-![Footer](https://capsule-render.vercel.app/api?type=wave&color=ED1C24&height=80&section=footer)
-
-</div>
