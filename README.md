@@ -49,8 +49,8 @@ Esta sprint teve como foco a consolidação dos seguintes conceitos:
 ## Como Rodar
 
 ```bash
-git clone https://github.com/Liraas-v/SPRINT-2-WEBDEV
-cd SPRINT-2-WEBDEV
+git clone https://github.com/Liraas-v/Landing-page-JOVI-LensAI
+cd Landing-page-JOVI-LensAI
 # Abra index.html no navegador ou use Live Server no VS Code
 ```
 
